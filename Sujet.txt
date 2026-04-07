@@ -1,0 +1,128 @@
+ITIS - INGETIS - ING - BA DEV/DATA 3 - Application avec Backoffice
+ITIS - INGETIS - ING - BA DEV/DATA 3 - Application avec Backoffice
+ Date limite : 28 mai 2026 à 17:00:00
+
+Développement Full-Stack : Application avec Backoffice
+Contexte du projet
+Vous devez développer une application complète avec backoffice sécurisé et interface frontend. Le projet mettra en œuvre vos compétences en développement full-stack avec Spring Boot et un framework frontend.
+
+Partie 1: Backend Spring Boot
+Modèles de données
+Créez les entités suivantes:
+
+User (utilisateur système)
+
+id, username, email, password, roles (USER, ADMIN), enabled, createdAt
+Product (produit)
+
+id, name, description, price, category, stockQuantity, createdAt, lienImage
+Categorie
+
+id, name
+Order (commande)
+
+id, user, orderDate, totalAmount, status (PENDING, PROCESSING, SHIPPED, DELIVERED), produit, quantite
+Sécurité Spring Security
+Configurez Spring Security avec:
+
+Authentification par JWT (JSON Web Token)
+Deux rôles: USER et ADMIN
+Les endpoints /api/admin/** accessibles uniquement aux ADMIN
+Les endpoints /api/auth/** accessibles publiquement
+Les endpoints /api/user/** accessibles aux utilisateurs authentifiés
+'/' accessibles publiquement (afficher une image)
+Implémentez:
+
+Endpoint d'inscription (register)
+Endpoint de connexion (login)
+api
+les roles sont enregistrer en dur
+API REST Controller
+Créez les controllers REST suivants:
+
+AuthController (endpoints publics)
+
+POST /api/auth/register - Inscription utilisateur
+POST /api/auth/login - Connexion
+AdminController (accessibles uniquement aux ADMIN)
+
+CRUD complet pour les produits
+GET /api/admin/users - Liste tous les utilisateurs
+pouvoir modifier les informations d'un utilisateur
+ProductController (accessibles publiquement en lecture)
+
+GET /api/products - Liste tous les produits (paginé)
+GET /api/products/{id} - Détail d'un produit
+GET /api/products/search - Recherche par nom/catégorie
+OrderController (accessibles aux utilisateurs authentifiés)
+
+POST /api/orders - Créer une commande
+GET /api/orders/my-orders - Voir ses commandes
+Frontend
+Choix et configuration
+Choisissez un framework (Angular ou Vue.js ou js ou postman) et:
+
+Configurez le projet avec toutes les dépendances nécessaires
+Créez une structure de dossiers logique (components, services, models, etc.)
+Configurez le routing
+Pages et composants
+Créez les pages suivantes:
+
+Page de connexion/inscription
+
+Formulaire de connexion
+Formulaire d'inscription
+Page d'accueil (publique)
+
+Liste des produits avec recherche et filtres
+Détail d'un produit
+Espace utilisateur (protégé)
+
+Profil utilisateur
+Historique des commandes
+Passer une commande
+Backoffice Admin (protégé - rôle ADMIN)
+
+Tableau de bord avec statistiques
+Gestion des produits (CRUD complet)
+Gestion des utilisateurs (liste, modification de rôle)
+Visualisation des commandes
+Documentation et livraison
+Documentation
+Créez un fichier README.md avec:
+Instructions d'installation et d'exécution
+Description des fonctionnalités
+Structure de la base de données
+Collection Postman exportée (si utilisé au lieu de frontend)
+Livraison
+Option 1: Captures d'écran
+
+Prenez au moins 10 captures d'écran montrant:
+Interface publique
+Interface utilisateur connecté
+Interface admin
+Fonctionnalités CRUD
+Gestion des commandes
+Option 2: Vidéo démo (recommandé)
+
+Enregistrez une vidéo de 5-10 minutes montrant:
+Installation et lancement du projet
+Toutes les fonctionnalités en action
+Une demo
+Upload sur YouTube en mode "non répertorié" (unlisted)
+Partagez le lien dans la soumission
+Consignes de soumission
+Code source:
+
+Repository Git (GitHub, GitLab, Bitbucket)
+Deux dossiers séparés: /backend et /frontend
+Fichier .gitignore approprié pour chaque partie
+Démonstration:
+
+Soit dossier /screenshots avec les images
+Soit lien YouTube (unlisted) dans un fichier DEMO.md
+Format de soumission:
+
+Lien vers le repository Git
+Lien vers la vidéo (si applicable)
+Liste des fonctionnalités implémentées
