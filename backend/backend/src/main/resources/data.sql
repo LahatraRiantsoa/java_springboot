@@ -1,0 +1,3 @@
+-- Ce fichier est laisse vide intentionnellement.
+-- L'utilisateur admin est cree automatiquement au demarrage
+-- par la classe DataLoader.java (voir le package principal).
