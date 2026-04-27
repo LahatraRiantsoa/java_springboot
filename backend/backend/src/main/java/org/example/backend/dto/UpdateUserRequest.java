@@ -8,5 +8,5 @@ import java.util.Set;
 public class UpdateUserRequest {
 
     private Set<String> roles;
-    private boolean enabled;
+    private Boolean enabled;
 }

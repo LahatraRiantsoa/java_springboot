@@ -44,7 +44,9 @@ public class AdminController {
         if (request.getRoles() != null) {
             user.setRoles(request.getRoles());
         }
-        user.setEnabled(request.isEnabled());
+        if (request.getEnabled() != null) {
+            user.setEnabled(request.getEnabled());
+        }
 
         userRepository.save(user);
         return ResponseEntity.ok(toUserDTO(user));

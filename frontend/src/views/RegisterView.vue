@@ -30,8 +30,6 @@ async function sInscrire() {
 
   try {
     await authService.register(username.value, email.value, password.value)
-    // Apres inscription, on redirige vers le profil (le token est deja stocke)
-    localStorage.setItem('token', (await authService.login(username.value, password.value)).token)
     router.push('/profile')
   } catch (e: any) {
     erreur.value = e.response?.data?.erreur || 'Inscription echouee'
